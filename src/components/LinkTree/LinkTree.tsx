@@ -17,15 +17,15 @@ interface LinkTreeProps {
 
 const LinkTree: React.FC<LinkTreeProps> = ({ profileImage, name, bio, links }) => {
   return (
-    <div className="link-tree">
-      <div className="profile">
+    <div className="link-tree" data-testid="link-tree">
+      <div className="profile" data-testid="profile-section">
         {profileImage && (
-          <img src={profileImage} alt={name} className="profile-image" />
+          <img src={profileImage} alt={name} className="profile-image" data-testid="profile-image" />
         )}
-        <h1 className="profile-name">{name}</h1>
-        {bio && <p className="profile-bio">{bio}</p>}
+        <h1 className="profile-name" data-testid="profile-name">{name}</h1>
+        {bio && <p className="profile-bio" data-testid="profile-bio">{bio}</p>}
       </div>
-      <div className="links-container">
+      <div className="links-container" data-testid="links-container">
         {links.map((link, index) => (
           <LinkCard
             key={index}
